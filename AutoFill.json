@@ -1,0 +1,67 @@
+{
+  "type": "script",
+  "seleniumVersion": "2",
+  "formatVersion": 2,
+  "steps": [
+    {
+      "type": "get",
+      "url": "http://www.ancestry.com/"
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "link text",
+        "value": "SUBSCRIBE"
+      }
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "xpath",
+        "value": "//div[@class='ctaBox']/input"
+      }
+    },
+    {
+      "type": "storeEval",
+      "script": "javascript:(function(){var $=function(id){return document.getElementById(id);};var $$=function(id){if($(id))return $(id);else return new Object();};var host=document.location.host;var accountNum;var accountHolder;var region='Utah';var date=new Date();var email='ldh'+date.getFullYear()+(date.getMonth()+1<10?'0':'')+(date.getMonth()+1)+(date.getDate()<10?'0':'')+date.getDate()+'_'+(date.getHours()<10?'0':'')+date.getHours()+(date.getMinutes()<10?'0':'')+date.getMinutes()+(date.getSeconds()<10?'0':'')+date.getSeconds()+'@qamail.myfamilyinc.com';if(host.match('.co.uk$')){region='Kent';accountNum='70304247';accountHolder='Johnson';}if(host.match('.de$')){region='Berlin';accountNum='1234567891';accountHolder='Smithe';}if(host.match('.ca$')){region='Alberta';}if(host.match('.se$')){region='Blekingeln';}if(host.match('.com.au$')){region='Victoria';}if(host.match('.fr$')){region='Alsace';}if(host.match('.it$')){region='Lazio';}if(host.match('.com$')){}$('FirstName').value='TEST';$('LastName').value='ORDER';$('Email').value=email;if($('ConfirmPassword')){$('ConfirmPassword').value='tester';};if($('Password')){$('Password').value='tester';}$$('NewsLetters').checked=false;$$('TermsForPayment').checked=true;$('Email').focus();})();",
+      "variable": "Success"
+    },
+    {
+      "type": "submitElement",
+      "locator": {
+        "type": "id",
+        "value": "ContinueButton"
+      }
+    },
+    {
+      "type": "storeEval",
+      "script": "javascript:(function(){var $=function(id){return document.getElementById(id);};var $$=function(id){if($(id))return $(id);else return new Object();};var host=document.location.host;var accountNum;var accountHolder;var region='Utah';var date=new Date();var email='ldh'+date.getFullYear()+(date.getMonth()+1<10?'0':'')+(date.getMonth()+1)+(date.getDate()<10?'0':'')+date.getDate()+'_'+(date.getHours()<10?'0':'')+date.getHours()+(date.getMinutes()<10?'0':'')+date.getMinutes()+(date.getSeconds()<10?'0':'')+date.getSeconds()+'@qamail.myfamilyinc.com';if(host.match('.co.uk$')){region='Kent';accountNum='70304247';accountHolder='Johnson';}if(host.match('.de$')){region='Berlin';accountNum='1234567891';accountHolder='Smithe';}if(host.match('.ca$')){region='Alberta';}if(host.match('.se$')){region='Blekingeln';}if(host.match('.com.au$')){region='Victoria';}if(host.match('.fr$')){region='Alsace';}if(host.match('.it$')){region='Lazio';}if(host.match('.com$')){}$$('CardNumber').value='4111111111111111';$$('CVV').value='111';$$('ExpirationMonth').value='08';$$('ExpirationYear').value='2019';$$('VoucherNum').value='1928374659182736450';$$('AccountHolder').value=accountHolder;$$('AccountNumber').value=accountNum;$$('BankCode').value='12334455';$$('BranchSortCode1').value='20';$$('Address1').value='DONOTBILLTHIS';$$('Address2').value='DONOTSHIPTHIS';$$('City').value='Provo';$$('Region').value=region;$$('RegionDropDown').value=region;$$('PostalCode').value='84604';$$('TermsForPayment').checked=true;})();",
+      "variable": "Success"
+    },
+    {
+      "type": "waitForTextPresent",
+      "text": "please confirm your information below"
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "id",
+        "value": "ContinueButton"
+      }
+    },
+    {
+      "type": "verifyTextPresent",
+      "text": "You're ready to get started."
+    },
+    {
+      "type": "verifyTextPresent",
+      "text": "U.S. Discovery Membership"
+    }
+  ],
+  "data": {
+    "configs": {},
+    "source": "none"
+  },
+  "inputs": [],
+  "timeoutSeconds": 60
+}
