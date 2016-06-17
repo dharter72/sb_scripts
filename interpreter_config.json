@@ -5,19 +5,21 @@
   "settings": [
 {
   "driverOptions": {
-    "browserName": chrome,
-    "username": "dharter",
-	"accessKey": "8432591a-7a8b-4c6a-9a54-2b344155f0af"
+   "host": "ondemand.saucelabs.com",
+   "port": 80
+    
 
   },
   "browserOptions": {
-    "browserName": "firefox",
+    "browserName": "chrome",
+	"username": "dharter",
+	"accessKey": "8432591a-7a8b-4c6a-9a54-2b344155f0af"
   }
 }
   ],
   "scripts": [
 
-    "mySeleniumBuilderTests/tests/*"
+    "sb_scripts/LOHP.json"
 
       ]
     }
