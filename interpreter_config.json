@@ -3,23 +3,20 @@
   "configurations": [
 {
   "settings": [
-{
-  "driverOptions": {
-   "host": "ondemand.saucelabs.com",
-   "port": 80
-    
-
-  },
-  "browserOptions": {
-    "browserName": "chrome",
-	"username": "dharter",
-	"accessKey": "8432591a-7a8b-4c6a-9a54-2b344155f0af"
-  }
-}
+    {
+      "driverOptions": {
+        "host": "ondemand.saucelabs.com",
+        "port": 80
+      },
+      "browserOptions": {
+        "browserName": "chrome",
+        "username": "dharter",
+        "accessKey": "8432591a-7a8b-4c6a-9a54-2b344155f0af"
+      }
+    }
   ],
   "scripts": [
-
-    "sb_scripts/LOHP.json"
+    "**/LOHP.json"
 
       ]
     }
